@@ -1,6 +1,21 @@
 import { useEffect, useState } from "react";
+import styled from "styled-components";
 
 // `https://api.frankfurter.app/latest?amount=100&from=EUR&to=USD`
+
+const StyledConverter = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+`;
+
+const StyledPadding = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+`;
 
 function Converter() {
   const [amount, setAmount] = useState(1);
@@ -17,7 +32,9 @@ function Converter() {
     let hour = currentDate.getHours();
     let minutes = currentDate.getMinutes();
 
-    return `${day}/${month}/${year} - ${hour}:${minutes}`;
+    return `${day}/${month}/${year} - ${hour}:${
+      minutes.length > 1 ? minutes : "0" + minutes
+    }`;
   };
 
   useEffect(
@@ -38,40 +55,44 @@ function Converter() {
   );
 
   return (
-    <div>
-      <h2>Exchanger with up to date {getCurrentDateTime()}</h2>
-      <input
-        type="text"
-        value={amount}
-        onChange={(e) => setAmount(Number(e.target.value))}
-        disabled={isLoading}
-      ></input>
-      <select
-        value={fromCur}
-        onChange={(e) => setFromCur(e.target.value)}
-        disabled={isLoading}
-      >
-        <option value="USD">USD</option>
-        <option value="EUR">EUR</option>
-        <option value="CAD">CAD</option>
-        <option value="INR">INR</option>
-        <option value="PLN">PLN</option>
-      </select>
-      <select
-        value={toCur}
-        onChange={(e) => setToCur(e.target.value)}
-        disabled={isLoading}
-      >
-        <option value="USD">USD</option>
-        <option value="EUR">EUR</option>
-        <option value="CAD">CAD</option>
-        <option value="INR">INR</option>
-        <option value="PLN">PLN</option>
-      </select>
-      <p>
-        {converted} {toCur}
-      </p>
-    </div>
+    <StyledConverter>
+      <div>
+        <h2>Exchanger with up to date {getCurrentDateTime()}</h2>
+        <StyledPadding>
+          <input
+            type="text"
+            value={amount}
+            onChange={(e) => setAmount(Number(e.target.value))}
+            disabled={isLoading}
+          ></input>
+          <select
+            value={fromCur}
+            onChange={(e) => setFromCur(e.target.value)}
+            disabled={isLoading}
+          >
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="CAD">CAD</option>
+            <option value="INR">INR</option>
+            <option value="PLN">PLN</option>
+          </select>
+          <select
+            value={toCur}
+            onChange={(e) => setToCur(e.target.value)}
+            disabled={isLoading}
+          >
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="CAD">CAD</option>
+            <option value="INR">INR</option>
+            <option value="PLN">PLN</option>
+          </select>
+        </StyledPadding>
+        <p>
+          {converted} {toCur}
+        </p>
+      </div>
+    </StyledConverter>
   );
 }
 

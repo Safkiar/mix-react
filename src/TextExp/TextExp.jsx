@@ -38,6 +38,7 @@ export default TextExp;
 function TextExpander({
   collapsedNumWords = 10,
   expandButtonText = "Show more",
+
   collapseButtonText = "Show less",
   expanded = false,
   children,
@@ -55,6 +56,7 @@ function TextExpander({
     cursor: "pointer",
     marginLeft: "6px",
     color: buttonColor,
+    outline: "none",
   };
 
   return (

@@ -65,7 +65,11 @@ button:focus-visible {
 
 .navbar {
   width: 100vw;
-  background-color: #f1eeeea4;
+  background-color: #2325c0a4;
+  text-align: center;
+  padding: 5px;
+  box-shadow: inset 0 4px 8px rgba(214, 207, 207, 0.274),
+    inset 10px 6px 20px rgba(248, 246, 246, 0.379);
 }
 
 .bar {
@@ -79,4 +83,12 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+}
+
+hr {
+  width: 100%;
+  margin: 50px 0;
+  box-shadow: 0 4px 8px rgba(214, 207, 207, 0.274),
+    10px 6px 20px rgba(248, 246, 246, 0.379);
+  border: 1px solid rgb(18, 26, 138);
 }

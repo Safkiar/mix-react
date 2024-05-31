@@ -1,4 +1,12 @@
 import { useState } from "react";
+import styled from "styled-components";
+
+const StyledLocation = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+`;
 
 function useGeolocation() {
   const [isLoading, setIsLoading] = useState(false);
@@ -43,24 +51,26 @@ function Location() {
   }
 
   return (
-    <div>
-      <button onClick={handleClick}>Get my position</button>
-      {isLoading && <p>Loading position...</p>}
-      {error && <p>{error}</p>}
-      {!isLoading && !error && lat && lng && (
-        <p>
-          Your GPS position:{" "}
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href={`https://www.openstreetmap.org/#map=16/${lat}/${lng}`}
-          >
-            {lat},{lng}
-          </a>
-        </p>
-      )}
-      <p>Your requested position {countClicks} times</p>
-    </div>
+    <StyledLocation>
+      <div>
+        <button onClick={handleClick}>Get my position</button>
+        {isLoading && <p>Loading position...</p>}
+        {error && <p>{error}</p>}
+        {!isLoading && !error && lat && lng && (
+          <p>
+            Your GPS position:{" "}
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href={`https://www.openstreetmap.org/#map=16/${lat}/${lng}`}
+            >
+              {lat},{lng}
+            </a>
+          </p>
+        )}
+        <p>Your requested position {countClicks} times</p>
+      </div>
+    </StyledLocation>
   );
 }
 

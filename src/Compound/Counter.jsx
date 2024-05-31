@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import styles from "./Compound.module.css";
 
 //  I have created context
 const CounterContext = createContext();
@@ -21,11 +22,11 @@ function Counter({ children }) {
 
 function Count() {
   const { count } = useContext(CounterContext);
-  return <span>{count}</span>;
+  return <span className={styles.buttonSpace}>{count}</span>;
 }
 
 function Label({ children }) {
-  return <span>{children}</span>;
+  return <span className={styles.labelMid}>{children}</span>;
 }
 function Increase({ icon }) {
   const { increase } = useContext(CounterContext);

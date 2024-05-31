@@ -4,6 +4,11 @@ import { useKey } from "./useKey";
 import { useLocalStorageState } from "./useLocalStorageState";
 import { useMovies } from "./useMovies";
 import styles from "./UsePopcorn.module.css";
+import styled from "styled-components";
+
+const MarginBottom = styled.div`
+  margin-bottom: 40px;
+`;
 
 const average = (arr) =>
   arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
@@ -69,6 +74,7 @@ function UsePopcorn() {
           )}
         </Box>
       </Main>
+      <MarginBottom></MarginBottom>
     </>
   );
 }

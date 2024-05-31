@@ -1,5 +1,19 @@
 import { useState } from "react";
-import styles from "./tipcalc.module.css";
+import styled from "styled-components";
+
+const StyledTip = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 600px;
+  margin: auto;
+  gap: 20px;
+`;
+
+const StyledSpace = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
 
 function Tipcalc() {
   const [bill, setBill] = useState("");
@@ -15,7 +29,7 @@ function Tipcalc() {
   }
 
   return (
-    <div>
+    <StyledTip>
       <BillInput bill={bill} onSetBill={setBill} />
       <SelectPercentage percentage={percentage1} onSelect={setPercentage1}>
         How did you like the service?
@@ -29,13 +43,13 @@ function Tipcalc() {
           <Reset onReset={handleReset} />
         </>
       )}
-    </div>
+    </StyledTip>
   );
 }
 
 function BillInput({ bill, onSetBill }) {
   return (
-    <div>
+    <StyledSpace>
       <label> How much was the bill?</label>
       <input
         type="text"
@@ -43,13 +57,13 @@ function BillInput({ bill, onSetBill }) {
         value={bill}
         onChange={(e) => onSetBill(Number(e.target.value))}
       />
-    </div>
+    </StyledSpace>
   );
 }
 
 function SelectPercentage({ children, percentage, onSelect }) {
   return (
-    <div>
+    <StyledSpace>
       <label>{children}</label>
       <select
         value={percentage}
@@ -60,7 +74,7 @@ function SelectPercentage({ children, percentage, onSelect }) {
         <option value="10">It was good (10%)</option>
         <option value="20">Absolutely amazing! (20%)</option>
       </select>
-    </div>
+    </StyledSpace>
   );
 }
 

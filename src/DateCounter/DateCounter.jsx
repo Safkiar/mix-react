@@ -1,8 +1,19 @@
 import { useState } from "react";
+import styled from "styled-components";
+
+const StyledDate = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  flex-direction: column;
+  height: 200px;
+`;
 
 function DateCounter() {
   return (
-    <div className="first-component bar">
+    <div>
       <Counter />
     </div>
   );
@@ -21,7 +32,7 @@ function Counter() {
   date.setDate(date.getDate() + count);
 
   return (
-    <div>
+    <StyledDate>
       <div>
         <input
           type="range"
@@ -56,7 +67,7 @@ function Counter() {
           <button onClick={handleReset}>Reset</button>
         </div>
       ) : null}
-    </div>
+    </StyledDate>
   );
 }
 

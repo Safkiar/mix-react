@@ -1,4 +1,12 @@
 import { useReducer } from "react";
+import styled from "styled-components";
+
+const StyledBankish = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+`;
 
 const initialState = {
   balance: 0,
@@ -44,59 +52,61 @@ function Bankish() {
     initialState
   );
   return (
-    <div>
-      <h2>UseReducer Bank Account</h2>
-      <p>Balance: {balance}</p>
-      <p>Loan: {loan}</p>
-      <p>
-        <button
-          onClick={() => dispatch({ type: "openAccount" })}
-          disabled={isActive}
-        >
-          Open account
-        </button>
-      </p>
-      <p>
-        <button
-          onClick={() => dispatch({ type: "deposit", payload: 150 })}
-          disabled={!isActive}
-        >
-          Deposit 150
-        </button>
-      </p>
-      <p>
-        <button
-          onClick={() => dispatch({ type: "withdraw", payload: 50 })}
-          disabled={!isActive}
-        >
-          Withdraw 50
-        </button>
-      </p>
-      <p>
-        <button
-          onClick={() => dispatch({ type: "requestLoan", payload: 5000 })}
-          disabled={!isActive}
-        >
-          Request a loan of 5000
-        </button>
-      </p>
-      <p>
-        <button
-          onClick={() => dispatch({ type: "payLoan" })}
-          disabled={!isActive}
-        >
-          Pay loan
-        </button>
-      </p>
-      <p>
-        <button
-          onClick={() => dispatch({ type: "closeAccount" })}
-          disabled={!isActive}
-        >
-          Close account
-        </button>
-      </p>
-    </div>
+    <StyledBankish>
+      <div>
+        <h2>UseReducer Bank Account</h2>
+        <p>Balance: {balance}</p>
+        <p>Loan: {loan}</p>
+        <p>
+          <button
+            onClick={() => dispatch({ type: "openAccount" })}
+            disabled={isActive}
+          >
+            Open account
+          </button>
+        </p>
+        <p>
+          <button
+            onClick={() => dispatch({ type: "deposit", payload: 150 })}
+            disabled={!isActive}
+          >
+            Deposit 150
+          </button>
+        </p>
+        <p>
+          <button
+            onClick={() => dispatch({ type: "withdraw", payload: 50 })}
+            disabled={!isActive}
+          >
+            Withdraw 50
+          </button>
+        </p>
+        <p>
+          <button
+            onClick={() => dispatch({ type: "requestLoan", payload: 5000 })}
+            disabled={!isActive}
+          >
+            Request a loan of 5000
+          </button>
+        </p>
+        <p>
+          <button
+            onClick={() => dispatch({ type: "payLoan" })}
+            disabled={!isActive}
+          >
+            Pay loan
+          </button>
+        </p>
+        <p>
+          <button
+            onClick={() => dispatch({ type: "closeAccount" })}
+            disabled={!isActive}
+          >
+            Close account
+          </button>
+        </p>
+      </div>
+    </StyledBankish>
   );
 }
 

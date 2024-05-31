@@ -17,21 +17,35 @@ import Compound from "./Compound/Compound.jsx";
 function App() {
   return (
     <>
-      <nav className="navbar">This will be navbar</nav>
+      <nav className="navbar">
+        Please check 13 of react components with different functionality{" "}
+      </nav>
       <div className="container">
         <Quiz />
-        <Compound />
-        <Bankish />
-        <Location />
-        <Converter />
-        <TextExp />
-        <DateCounter />
-        <FlashCards />
-        <FarAway />
-        <Acordion />
-        <Tipcalc />
-        <Split />
+        <hr></hr>
         <UsePopcorn />
+        <hr></hr>
+        <Bankish />
+        <hr></hr>
+        <Location />
+        <hr></hr>
+        <Converter />
+        <hr></hr>
+        <TextExp />
+        <hr></hr>
+        <DateCounter />
+        <hr></hr>
+        <FlashCards />
+        <hr></hr>
+        <FarAway />
+        <hr></hr>
+        <Acordion />
+        <hr></hr>
+        <Tipcalc />
+        <hr></hr>
+        <Split />
+        <hr></hr>
+        <Compound />
       </div>
     </>
   );

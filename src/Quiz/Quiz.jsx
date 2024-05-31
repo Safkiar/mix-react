@@ -89,7 +89,7 @@ function Quiz() {
   ] = useReducer(reducer, initialState);
 
   useEffect(function () {
-    fetch("../../public/data/questions.json")
+    fetch("data/questions.json")
       .then((res) => res.json())
       .then((data) => dispatch({ type: "dataReceived", payload: data }))
       .catch((err) => dispatch({ type: "dataFailed" }));

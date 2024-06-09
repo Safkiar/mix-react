@@ -5,9 +5,10 @@ const StyledTip = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
-  width: 600px;
+  width: auto;
   margin: auto;
-  gap: 20px;
+  gap: 14px;
+  max-width: 90vw;
 `;
 
 const StyledSpace = styled.div`

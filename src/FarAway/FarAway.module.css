@@ -11,6 +11,8 @@
   width: 100%;
   height: auto;
   border: 1px solid white;
+  max-width: 90vw;
+  margin: 0 auto;
 }
 
 .h1__faraway {
@@ -112,4 +114,10 @@
   text-align: center;
   font-weight: 700;
   padding: 1rem 0;
+}
+
+@media (max-width: 950px) {
+  .addform {
+    flex-direction: column;
+  }
 }

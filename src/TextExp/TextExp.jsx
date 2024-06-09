@@ -1,8 +1,14 @@
 import { useState } from "react";
+import styled from "styled-components";
+
+const ExpDiv = styled.div`
+  width: auto;
+  margin: 0 auto;
+`;
 
 function TextExp() {
   return (
-    <div>
+    <ExpDiv>
       <h2>Text Expanders</h2>
       <TextExpander>
         Space travel is the ultimate adventure! Imagine soaring past the stars
@@ -29,7 +35,7 @@ function TextExp() {
         travel is a pretty cool thing to think about. Who knows what we'll
         discover next!
       </TextExpander>
-    </div>
+    </ExpDiv>
   );
 }
 

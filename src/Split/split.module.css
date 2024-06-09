@@ -126,9 +126,6 @@
   font-size: 1.8rem;
 }
 
-.split__app input {
-}
-
 .split__app input,
 .split__app select {
   background-color: var(--color-medium);
@@ -159,4 +156,50 @@
   text-transform: uppercase;
   letter-spacing: -0.5px;
   margin-bottom: 1.6rem;
+}
+
+@media (max-width: 1425px) {
+  .split__container {
+    max-width: 95vw;
+  }
+  .split__app {
+    column-gap: 3rem;
+    grid-template-columns: 1fr 1.25fr;
+  }
+  .split__button {
+    font-size: 1.2rem;
+  }
+  .split__app form {
+    font-size: 1.2rem;
+  }
+  .split__app form .hform {
+    font-size: 1.5rem;
+  }
+  .formaddfriend {
+    font-size: 1.1rem;
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 1.6rem;
+  }
+
+  .formaddfriend label {
+    font-size: 1rem;
+  }
+  .formaddfriend input {
+    width: 90%;
+    font-size: 0.9rem;
+  }
+  .formaddfriend button {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .split__app {
+    column-gap: 3rem;
+    grid-template-columns: 1fr;
+  }
+  .formsplitbill {
+    margin-top: 20px;
+  }
 }

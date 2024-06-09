@@ -1,5 +1,11 @@
 import { useState } from "react";
 import styles from "./FlashCards.module.css";
+import styled from "styled-components";
+
+const FlashDiv = styled.div`
+  max-width: auto;
+  margin: 0 auto;
+`;
 
 const questions = [
   {
@@ -43,19 +49,21 @@ function FlashCards() {
   }
 
   return (
-    <div className={styles.flashcards}>
-      {questions.map((question) => (
-        <div
-          key={question.id}
-          onClick={() => handleClick(question.id)}
-          className={question.id === selectedId ? styles.selected : ""}
-        >
-          <p>
-            {question.id === selectedId ? question.answer : question.question}
-          </p>
-        </div>
-      ))}
-    </div>
+    <FlashDiv>
+      <div className={styles.flashcards}>
+        {questions.map((question) => (
+          <div
+            key={question.id}
+            onClick={() => handleClick(question.id)}
+            className={question.id === selectedId ? styles.selected : ""}
+          >
+            <p>
+              {question.id === selectedId ? question.answer : question.question}
+            </p>
+          </div>
+        ))}
+      </div>
+    </FlashDiv>
   );
 }
 

@@ -16,7 +16,6 @@ const SECS_PER_QUESTIONS = 30;
 
 const initialState = {
   questions: [],
-  // loading error ready active finished
   status: "loading",
   index: 0,
   answer: null,

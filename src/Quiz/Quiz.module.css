@@ -24,7 +24,7 @@
 }
 
 .main {
-  width: 100rem;
+  /* width: 100rem; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -233,5 +233,83 @@
   }
   80% {
     background-position: 0% 50%, 50% 50%, 100% 100%;
+  }
+}
+
+@media (max-width: 750px) {
+  .header {
+    margin-bottom: 1rem;
+  }
+  .header img {
+    width: 10rem;
+  }
+  .header h1 {
+    font-size: 1.5rem;
+  }
+  .error {
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 1.5rem;
+    background-color: #495057;
+    border-radius: 50px;
+  }
+  .progress {
+    margin-bottom: 1.6rem;
+    width: 80vw;
+    gap: 0.8rem;
+    font-size: 1.1rem;
+    color: var(--color-medium);
+  }
+  .btn {
+    font-size: 1rem;
+    padding: 0.5rem 1.6rem;
+    border-radius: 80px;
+  }
+  .answer {
+    transform: translateX(0.6rem);
+  }
+  .options {
+    gap: 1rem;
+    margin-bottom: 2rem;
+    width: 80vw;
+    max-width: 40rem;
+  }
+
+  .main h4 {
+    font-size: 1.1rem;
+    max-width: 80vw;
+  }
+
+  .btnoption {
+    width: 80vw;
+    text-align: left;
+  }
+  .result {
+    padding: 1.8rem 0.4rem;
+    font-size: 1.1rem;
+  }
+
+  .result span {
+    font-size: 1.1rem;
+  }
+
+  .highscore {
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+  }
+
+  .timer {
+    font-size: 1rem;
+    padding: 0.5rem 1.6rem;
+  }
+
+  .loadercontainer {
+    margin-top: 2rem;
+    gap: 1.4rem;
+    font-size: 1.2rem;
+  }
+  .loader {
+    width: 30px;
+    height: 14px;
   }
 }

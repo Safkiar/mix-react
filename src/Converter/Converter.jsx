@@ -8,6 +8,7 @@ const StyledConverter = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
+  max-width: 90vw;
 `;
 
 const StyledPadding = styled.div`
@@ -33,7 +34,7 @@ function Converter() {
     let minutes = currentDate.getMinutes();
 
     return `${day}/${month}/${year} - ${hour}:${
-      minutes.length > 1 ? minutes : "0" + minutes
+      minutes > 1 ? minutes : "0" + minutes
     }`;
   };
 
@@ -89,7 +90,7 @@ function Converter() {
           </select>
         </StyledPadding>
         <p>
-          {converted} {toCur}
+          {parseFloat(converted).toFixed(2)} {toCur}
         </p>
       </div>
     </StyledConverter>

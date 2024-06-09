@@ -314,7 +314,7 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
         <Loader />
       ) : (
         <>
-          <header>
+          <header className={styles.rightHeader}>
             <button className={styles.btnback} onClick={onCloseMovie}>
               &larr;
             </button>
@@ -334,7 +334,7 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
 
           {/* <p>{avgRating}</p> */}
 
-          <section>
+          <section className={styles.section}>
             <div className={styles.rating}>
               {!isWatched ? (
                 <>
@@ -377,7 +377,6 @@ function WatchedSummary({ watched }) {
       <h2>Movies you watched</h2>
       <div>
         <p>
-          <span>#️⃣</span>
           <span>{watched.length} movies</span>
         </p>
         <p>
@@ -416,7 +415,7 @@ function WatchedMovie({ movie, onDeleteWatched }) {
     <li>
       <img src={movie.poster} alt={`${movie.title} poster`} />
       <h3>{movie.title}</h3>
-      <div>
+      <div className={styles.txt}>
         <p>
           <span>⭐️</span>
           <span>{movie.imdbRating}</span>

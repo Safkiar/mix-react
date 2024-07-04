@@ -6,6 +6,8 @@ const ExpDiv = styled.div`
   margin: 0 auto;
 `;
 
+const Igor = "100kg";
+
 function TextExp() {
   return (
     <ExpDiv>
